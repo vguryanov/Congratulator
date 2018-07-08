@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Entity.EmailEntity" table="Email" schema="dbo" catalog="">
+        <id name="id">
+            <column name="ID" sql-type="nvarchar(50)" length="50"/>
+        </id>
+        <property name="deleted">
+            <column name="Deleted" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="Email" sql-type="nvarchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="parentId">
+            <column name="ParentID" sql-type="nvarchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="createDate">
+            <column name="CreateDate" sql-type="datetime" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
